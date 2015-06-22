@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('layouts/main');
+	return View::make('layouts/main')->with('catnav', Category::all());
 });
 
 Route::controller('users', 'UsersController');

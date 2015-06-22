@@ -83,166 +83,20 @@
 
 	<nav class="dj-nav">
 		<ul id="dj-primary-nav" class="dj-primary-nav is-fixed">
+			@foreach($catnav as $cat)
 			<li class="has-children">
-				<a href="http://codyhouse.co/?p=409">Men</a>
+			    {{ HTML::link('store/category/' . $cat->name, $cat->name) }}
 
 				<ul class="dj-secondary-nav is-hidden">
 					<li class="go-back"><a href="#0">Menu</a></li>
 					<li class="see-all">
-						<a href="category.html">
-							Shop All Men's
-							<span class="fa fa-caret-right"></span>
-						</a>
-					</li>
-					<li class="has-children">
-						<span>Accessories</span>
 
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Accessories</a></li>
-							<li><a href="#0">Beanies</a></li>
-							<li><a href="#0">Caps &amp; Hats</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Glasses</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Gloves</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Jewellery</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Scarves</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Wallets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Watches</a></li>
-						</ul>
-					</li>
-
-					<li class="has-children">
-						<span>Bottoms</span>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Bottoms</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Casual Trousers</a></li>
-							<li><a href="#0">Jeans</a></li>
-							<li><a href="#0">Leggings</a></li>
-							<li><a href="#0">Shorts</a></li>
-						</ul>
-					</li>
-
-					<li class="has-children">
-						<span>Jackets</span>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Blazers</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Bomber jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Denim Jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Duffle Coats</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Leather Jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Parkas</a></li>
-						</ul>
-					</li>
-
-					<li class="has-children">
-						<span>Tops</span>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Tops</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Cardigans</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Coats</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Hoodies &amp; Sweatshirts</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Jumpers</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Polo Shirts</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Shirts</a></li>
-							<li><a href="#0">T-Shirts</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Vests</a></li>
-						</ul>
-					</li>
-				</ul>
-			</li>
-
-			<li class="has-children">
-				<a href="http://codyhouse.co/?p=409">Women</a>
-
-				<ul class="dj-secondary-nav is-hidden">
-					<li class="go-back"><a href="#0">Menu</a></li>
-					<li class="see-all">
-						<a href="http://codyhouse.co/?p=409">
-							Shop All Women's
-							<span class="fa fa-caret-right"></span>
-						</a>
-					</li>
-					<li class="has-children">
-						<span>Accessories</span>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Accessories</a></li>
-							<li><a href="#0">Beanies</a></li>
-							<li><a href="#0">Caps &amp; Hats</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Glasses</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Gloves</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Jewellery</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Scarves</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Wallets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Watches</a></li>
-						</ul>
-					</li>
-
-					<li class="has-children">
-						<span>Bottoms</span>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Bottoms</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Casual Trousers</a></li>
-							<li><a href="#0">Jeans</a></li>
-							<li><a href="#0">Leggings</a></li>
-							<li><a href="#0">Shorts</a></li>
-						</ul>
-					</li>
-
-					<li class="has-children">
-						<span>Jackets</span>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Blazers</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Bomber jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Denim Jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Duffle Coats</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Leather Jackets</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Parkas</a></li>
-						</ul>
-					</li>
-
-					<li class="has-children">
-						<span>Tops</span>
-
-						<ul class="is-hidden">
-							<li class="go-back"><a href="#0">Clothing</a></li>
-							<li class="see-all"><a href="http://codyhouse.co/?p=409">All Tops</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Cardigans</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Coats</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Hoodies &amp; Sweatshirts</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Jumpers</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Polo Shirts</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Shirts</a></li>
-							<li><a href="#0">T-Shirts</a></li>
-							<li><a href="http://codyhouse.co/?p=409">Vests</a></li>
-						</ul>
-					</li>
-				</ul>				
-			</li>
-
-			<li class="has-children">
-				<a href="http://codyhouse.co/?p=409">Kids</a>
-
-				<ul class="dj-secondary-nav is-hidden">
-					<li class="go-back"><a href="#0">Menu</a></li>
-					<li class="see-all">
-						<a href="http://codyhouse.co/?p=409">
-							Shop All Youth &amp; Children
+						@if( $cat->name === 'kids')
+							{{ HTML::link('store/category/' . $cat->name, 'Shop All Youth &amp; Children') }}
+						@else
+							{{ HTML::link('store/category/' . $cat->name, 'Shop All ' . ucfirst($cat->name) . '\'s') }}
+						@endif
 						<span class="fa fa-caret-right"></span>
-					</a>	
 					</li>
 					<li class="has-children">
 						<span>Accessories</span>
@@ -306,7 +160,9 @@
 						</ul>
 					</li>
 				</ul>
+
 			</li>
+			@endforeach
 
 			<li>
 				{{ HTML::link('store/contact', 'Contact') }}

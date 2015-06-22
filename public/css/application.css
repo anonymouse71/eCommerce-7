@@ -1269,6 +1269,7 @@ Main components
   .dj-primary-nav > .has-children > a {
     /* main navigation arrows on larger devices */
     padding-right: 30px !important;
+    text-transform: capitalize;
   }
   /* line 366, ../../../components/sass/modules/header/_nav.scss */
   .dj-primary-nav > .has-children > a::before, .dj-primary-nav > .has-children > a::after {

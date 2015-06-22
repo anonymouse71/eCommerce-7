@@ -4,11 +4,13 @@ class UsersController extends BaseController {
     
 
     public function __construct() 
-    {
+    {   
+    	parent::__construct();
         $this->beforeFilter('csrf', array('on' => 'post'));
     }
 
 	/**
+	 * Display the signup page
 	 * GET /users/signup
 	 *
 	 * @return Response
@@ -19,6 +21,7 @@ class UsersController extends BaseController {
 	}
 
 	/**
+	 * Create a new user
 	 * POST /users/signup
 	 *
 	 * @return Response
@@ -48,6 +51,7 @@ class UsersController extends BaseController {
 	}
 
 	/**
+	*  Display the login page
 	 * GET /users/login
 	 *
 	 * @return Response
@@ -58,6 +62,7 @@ class UsersController extends BaseController {
 	}
 
 	/**
+	 * Set up user authentication
 	 * POST /users/login
 	 *
 	 * @return Response
@@ -82,6 +87,7 @@ class UsersController extends BaseController {
 	}
 
 	/**
+	 * Log out the user
 	 * GET /users/logout
 	 *
 	 * @param  int  $id
