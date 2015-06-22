@@ -145,7 +145,7 @@ jQuery(document).ready(function($){
 	});
     
     // close the user account meun when clicking the close icon
-	$('.fa-close').on('click', function() {
+	$('#close-menu').on('click', function() {
 		console.log('click');
 		$(this).parent().next().animate({opacity: 0}, 300);
 		$(this).animate({opacity: 0}, 300);

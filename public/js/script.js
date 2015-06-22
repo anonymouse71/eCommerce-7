@@ -26,6 +26,14 @@ var jQuery = $;
 	
 // })();
 
+(function() {
+    
+    $('#close-message').on('click', function() {
+    	console.log('weila');
+    	
+    });
+})();
+
 // set up the jQuery filters accordion 
 (function() {
 

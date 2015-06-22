@@ -2242,7 +2242,7 @@ Main components
 
 /* line 4, ../../../components/sass/modules/auth/_login.scss */
 .content-wrapper {
-  margin-top: 150px;
+  margin-top: 130px;
   margin-bottom: 80px;
   max-width: 580px;
   margin-left: auto;
@@ -2277,7 +2277,7 @@ Main components
 .dj-auth-main .auth-input {
   width: 100%;
   font-weight: 400;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
 }
 /* line 39, ../../../components/sass/modules/auth/_login.scss */
 .dj-auth-main .auth-input-last {
@@ -4998,3 +4998,50 @@ Main components
     content: '';
   }
 }
+
+.dj-alert-message {
+    background: #33A3DC;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 50px;
+    margin-top: 80px;
+}
+
+#close-message {
+  float: right;
+  padding-right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .dj-alert-message {
+     margin-top: 50px;
+  }
+}
+
+.auth-input-row {
+   margin-bottom: 20px;
+}
+
+.auth-input-row:before, .auth-input-row:after {
+   content: '';
+   display: table;
+}
+
+.auth-input-row:after {
+   clear: both;
+}
+
+.validation-error {
+  background: red;
+  color: white;
+  padding: 2px 8px;
+  font-size: 12px;
+  font-weight: 600;
+  float: left;
+}
+

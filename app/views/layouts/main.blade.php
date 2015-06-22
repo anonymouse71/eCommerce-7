@@ -28,15 +28,28 @@
 			<li class="user-account">
 				<a class="fa fa-user" href="#">
 					<span class="fa fa-caret-down"></span>
-					<span class="fa fa-close"></span>
+					<span class="fa fa-close" id="close-menu"></span>
 				</a>
-				<ul>
-					<li>Hello, Owen!</li>
-					<li><a href="login.html">Log In</a></li>
-					<li><a href="signup.html">Sign Up</a></li>
-					<li><a href="#">My Account</a></li>
-					<li><a href="#">Logout</a></li>
-				</ul>
+				@if(Auth::check())
+					<ul>
+						<li>Hello, {{ Auth::user()->firstname }}</li>
+						<li>
+							{{ HTML::link('users/myaccount', 'My Account') }}
+						</li>
+						<li>
+							{{ HTML::link('users/logout', 'Logout') }}
+						</li>
+					</ul>
+				@else
+				    <ul>
+						<li>
+							{{ HTML::link('users/login', 'login') }}	
+						</li>
+						<li>
+							{{ HTML::link('users/signup', 'Sign Up') }}
+						</li>
+					</ul>
+				@endif
 			</li>
 			<li>
 				<a class="fa fa-shopping-cart" href="cart.html">
@@ -46,11 +59,15 @@
 		</ul>
 	</header> <!-- end header -->
 
-	<main class="dj-main-content">
+	@if(Session::has('message'))
+        <div class="dj-alert-message">
+        	{{ Session::get('message') }} 
+        	<span class="fa fa-close" id="close-message"></span>
+        </div>
 
-		@if(Session::has('message'))
-            <div class="alert">{{ Session::get('message') }} </div>
-        @endif
+    @endif
+
+	<main class="dj-main-content">
 
         @yield('promo')
 
@@ -209,7 +226,7 @@
 							<li><a href="http://codyhouse.co/?p=409">Jumpers</a></li>
 							<li><a href="http://codyhouse.co/?p=409">Polo Shirts</a></li>
 							<li><a href="http://codyhouse.co/?p=409">Shirts</a></li>
-							<li class="has-children"><a href="#0">T-Shirts</a></li>
+							<li><a href="#0">T-Shirts</a></li>
 							<li><a href="http://codyhouse.co/?p=409">Vests</a></li>
 						</ul>
 					</li>
@@ -376,7 +393,7 @@
 				    <div class="info-list">
 						<h3>get help</h3>
 						<ul>
-						    <li><a href="products.html">My Account</a></li>
+						    <li>{{ HTML::link('users/myaccount', 'My Account') }}</li>
 				            <li><a href="products.html">Shipping &amp; Delivery</a></li>
 				            <li><a href="products.html">Returns &amp; Exchanges</a></li>
 				            <li><a href="products.html">Customer Service</a></li>
