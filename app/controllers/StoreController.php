@@ -8,7 +8,7 @@ class StoreController extends BaseController {
      }
 	/**
 	 * Display a listing of the resource.
-	 * GET /store
+	 * GET /store/index
 	 *
 	 * @return Response
 	 */
@@ -21,24 +21,38 @@ class StoreController extends BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /store/create
+	 * GET /store/category
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function getCategory($cat_id)
 	{
-		//
+		$products = Product::where('category_id', $cat_id)->paginate(12);
+		$total_product = Product::where('category_id', $cat_id)->count();
+		$category = Category::find($cat_id);
+
+		return View::make('store.category')
+		   ->with('products', $products)
+		   ->with('category', $category)
+		   ->with('total', $total_product);
 	}
 
 	/**
 	 * Store a newly created resource in storage.
-	 * POST /store
+	 * POST /store/search
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function getSearch()
 	{
-		//
+		$query = Input::get('query');
+		$products = Product::where('title', 'LIKE', '%' . $query . '%')->paginate(12);
+		$results_num = Product::where('title', 'LIKE', '%' . $query . '%')->count();
+
+		return View::make('store.search')
+		  ->with('products', $products)
+		  ->with('results', $results_num)
+		  ->with('keyword', $query);
 	}
 
 	/**

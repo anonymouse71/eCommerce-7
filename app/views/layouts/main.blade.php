@@ -85,7 +85,7 @@
 		<ul id="dj-primary-nav" class="dj-primary-nav is-fixed">
 			@foreach($catnav as $cat)
 			<li class="has-children">
-			    {{ HTML::link('store/category/' . $cat->name, $cat->name) }}
+			    {{ HTML::link('store/category/' . $cat->id, $cat->name) }}
 
 				<ul class="dj-secondary-nav is-hidden">
 					<li class="go-back"><a href="#0">Menu</a></li>
@@ -171,9 +171,9 @@
 	</nav> <!-- dj-nav -->
 
 	<div id="dj-search" class="dj-search">
-		<form class="search-form">
-			<input type="search" placeholder="What are you looking for?">
-		</form>
+		{{ Form::open(array('url' => 'store/search', 'method' => 'get', 'class' => 'search-form')) }}
+            <input type="search" name="query" placeholder="What are you looking for?">
+        {{ Form::close() }}
 	</div>
 
 	<footer class="dj-footer">
