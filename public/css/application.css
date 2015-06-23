@@ -5038,11 +5038,14 @@ Main components
 }
 
 .validation-error {
-  background: red;
-  color: white;
+  color: red;
   padding: 2px 8px;
   font-size: 12px;
   font-weight: 600;
   float: left;
+}
+
+.category-name {
+   text-transform: capitalize;
 }
 

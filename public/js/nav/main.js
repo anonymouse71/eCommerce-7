@@ -56,7 +56,7 @@ jQuery(document).ready(function($){
 
 	//prevent default clicking on direct children of .dj-primary-nav 
 	$('.dj-primary-nav').children('.has-children').children('a').on('click', function(event){
-		event.preventDefault();
+		// event.preventDefault();
 	});
 	//open submenu
 	$('.has-children').children('a').on('click', function(event){

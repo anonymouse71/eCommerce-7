@@ -280,6 +280,7 @@
     {{ HTML::script('js/nav/jquery-2.1.1.js') }}
     {{ HTML::script('js/slick/slick.min.js') }}
     {{ HTML::script('js/nav/jquery.mobile.custom.min.js') }}
-    {{ HTML::script('js/nav/main.js') }} 
+    {{ HTML::script('js/nav/main.js') }}
+    {{ HTML::script('js/script.js') }} 
 </body>
 </html>

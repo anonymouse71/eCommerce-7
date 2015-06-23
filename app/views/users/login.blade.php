@@ -9,8 +9,12 @@
 
 		<div class="dj-auth-main">
 			{{ Form::open(array('url' => 'users/login')) }}
-			    {{ Form::email('email', null, array('class' => 'input-control auth-input', 'placeholder' => 'Email')) }}
-			    {{ Form::password('password', array('class' => 'input-control auth-input-last', 'placeholder' => 'Password')) }}
+			    <div class="auth-input-row">
+				    {{ Form::email('email', null, array('class' => 'input-control auth-input', 'placeholder' => 'Email')) }}
+				</div>
+
+				    {{ Form::password('password', array('class' => 'input-control auth-input-last', 'placeholder' => 'Password')) }}
+				    
 				<div class="remember-section">
 					<div class="dj-checkbox">
 						<input type="checkbox" id="remember-me" name="remember-me" />

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('layouts/main')->with('catnav', Category::all());
-});
+Route::get('/', array('uses' => 'StoreController@getIndex'));
 
 Route::controller('users', 'UsersController');
+Route::controller('store', 'StoreController');

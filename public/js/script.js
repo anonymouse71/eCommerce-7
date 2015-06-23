@@ -29,7 +29,8 @@ var jQuery = $;
 (function() {
     
     $('#close-message').on('click', function() {
-    	console.log('weila');
+    	console.log('weila!');
+    	$(this).parent().remove();
     	
     });
 })();
