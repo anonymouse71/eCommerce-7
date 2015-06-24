@@ -102,11 +102,19 @@
 	        			{{ Form::close() }}
 	        			<div class="checkout-or">or</div>
 
-	        			<form>
+	        			{{ Form::open(array('url' => 'https://www.paypal.com/cgi-bin/webscr', 'method' => 'post')) }}
 	        				<button class="primary-button paypal-checkout">
 	        					<span>Checkout with</span>
 	        				</button>
-	        			</form>
+
+	        				<input type="hidden" name="cmd" value="_xclick">
+	                        <input type="hidden" name="business" value="office@shop.com">
+	                        <input type="hidden" name="item_name" value="D&amp;J Store Purchase">
+	                        <input type="hidden" name="amount" value="{{ Cart::total() }}">
+	                        <input type="hidden" name="first_name" value="{{ Auth::user()->firstname }}">
+	                        <input type="hidden" name="last_name" value="{{ Auth::user()->lastname }}">
+	                        <input type="hidden" name="email" value="{{ Auth::user()->email }}" >
+	        			{{ Form::close() }}
 	        		</div>
 
 	        		<div class="shipping-section">
