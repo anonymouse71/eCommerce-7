@@ -95,11 +95,11 @@
 	        		</div>
 
 	        		<div class="checkout-section">
-	        			<form>
+	        			{{ Form::open(array('url' => '/cart/checkout')) }}
 	        				<button class="primary-button payment-checkout">
 	        					Checkout <span class="fa fa-chevron-circle-right"></span>
 	        				</button>
-	        			</form>
+	        			{{ Form::close() }}
 	        			<div class="checkout-or">or</div>
 
 	        			<form>

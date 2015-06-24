@@ -52,9 +52,11 @@
 				@endif
 			</li>
 			<li>
-				<a class="fa fa-shopping-cart" href="cart.html">
+				<a class="fa fa-shopping-cart" href="/cart/index">
 					@if(Cart::count() > 0)
 					   <span class="item-number">{{ Cart::count() }}</span>
+					@else
+					   <span class="item-number">0</span>
 					@endif
 				</a>
 			</li>
@@ -284,5 +286,7 @@
     {{ HTML::script('js/nav/jquery.mobile.custom.min.js') }}
     {{ HTML::script('js/nav/main.js') }}
     {{ HTML::script('js/script.js') }} 
+    <script src="https://js.stripe.com/v2/"></script>
+    {{ HTML::script('js/billing.js') }} 
 </body>
 </html>
