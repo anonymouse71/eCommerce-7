@@ -27,7 +27,7 @@ class AddPromoPriceToProductTable extends Migration {
 	{
 		Schema::table('products', function(Blueprint $table)
 		{
-			//
+			$table->dropColumn('promo_price');
 		});
 	}
 

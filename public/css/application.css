@@ -4354,7 +4354,10 @@ Main components
   padding-right: 5px;
 }
 /* line 216, ../../../components/sass/modules/product/_product.scss */
-.dj-main-content #product_content .purchase_block .color_list li .blue, .dj-main-content #product_content .purchase_block .color_list li .lightblue, .dj-main-content #product_content .purchase_block .color_list li .grey {
+.dj-main-content #product_content .purchase_block .color_list li .blue, 
+.dj-main-content #product_content .purchase_block .color_list li .lightblue, 
+.dj-main-content #product_content .purchase_block .color_list li .grey,
+.dj-main-content #product_content .purchase_block .color_list li .red {
   width: 25px;
   height: 25px;
   opacity: 0.9;
@@ -4364,7 +4367,10 @@ Main components
   border-radius: 50%;
 }
 /* line 223, ../../../components/sass/modules/product/_product.scss */
-.dj-main-content #product_content .purchase_block .color_list li .blue:hover, .dj-main-content #product_content .purchase_block .color_list li .lightblue:hover, .dj-main-content #product_content .purchase_block .color_list li .grey:hover {
+.dj-main-content #product_content .purchase_block .color_list li .blue:hover,
+.dj-main-content #product_content .purchase_block .color_list li .lightblue:hover,
+.dj-main-content #product_content .purchase_block .color_list li .grey:hover,
+.dj-main-content #product_content .purchase_block .color_list li .red:hover {
   opacity: 1;
   -moz-transform: scale(1.2, 1.2);
   -ms-transform: scale(1.2, 1.2);
@@ -4391,6 +4397,12 @@ Main components
 .dj-main-content #product_content .purchase_block .color_list li .lightblue {
   background: #33A3DC;
 }
+
+/* new style for laravel project */
+.dj-main-content #product_content .purchase_block .color_list li .red {
+  background: red;
+}
+
 /* line 244, ../../../components/sass/modules/product/_product.scss */
 .dj-main-content #product_content .purchase_block #dropdown {
   max-width: 64em;
@@ -5070,4 +5082,5 @@ Main components
    font-size: 20px;
    margin-bottom: 5px;
 }
+
 

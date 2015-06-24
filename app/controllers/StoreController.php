@@ -21,7 +21,7 @@ class StoreController extends BaseController {
 
 	/**
 	 * Show the form for creating a new resource.
-	 * GET /store/category
+	 * GET /store/category/{id}
 	 *
 	 * @return Response
 	 */
@@ -57,14 +57,26 @@ class StoreController extends BaseController {
 
 	/**
 	 * Display the specified resource.
-	 * GET /store/{id}
+	 * GET /store/product/{id}
 	 *
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function getProduct($id)
 	{
-		//
+		$product = Product::find($id);
+		$category = Category::where('id', $product->category_id)->first();
+		// $first_color = null;
+
+		foreach ($product->colors as $color) {
+			$first_color = $color;
+			break;
+		}
+
+		return View::make('store.product')
+		  ->with('category', $category)
+		  ->with('color', $first_color)
+		  ->with('product', $product);
 	}
 
 	/**

@@ -53,7 +53,7 @@
      		@foreach($products as $product)
      		    <div class="product_item">
   	     			<div class="product_details">
-  	     				<a href="store/product/{{ $product->id }}">
+  	     				<a href="product/{{ $product->id }}">
   	     					{{ HTML::image($product->image, $product->title)}}
   	     					<div class="product_info">
   	     						<h3>{{ $product->title }}</h3>

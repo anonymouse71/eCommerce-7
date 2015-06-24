@@ -29,7 +29,6 @@ var jQuery = $;
 (function() {
     
     $('#close-message').on('click', function() {
-    	console.log('weila!');
     	$(this).parent().remove();
     	
     });
@@ -119,7 +118,7 @@ var jQuery = $;
 	var $spinner = $('<img>');
 	$image.addClass("high_res");
 	$spinner.addClass("spinner");
-	$spinner.attr("src", "../images/details/ajax-loader.gif");
+	$spinner.attr("src", "images/details/ajax-loader.gif");
 	var overlay = $('#overlay'); 
 	overlay.append($image);  // append the new created image element into the overlay
 	overlay.append($spinner);  // append the spinner into the overlay
@@ -164,7 +163,7 @@ var jQuery = $;
 	var $spinner = $('<img>');
 	$sizeChart.addClass("high_res");
 	$spinner.addClass("spinner");
-	$spinner.attr("src", "../images/details/spinner.gif");
+	$spinner.attr("src", "images/details/spinner.gif");
 	var overLay = $('#overLay'); 
 	overLay.append($sizeChart);  // append the new created image element into the overlay
 	overLay.append($spinner);  // append the spinner into the overlay
@@ -218,8 +217,9 @@ var jQuery = $;
 		   // get the current image location
            var imageLoc = $(this).children().attr("src");
 
-           // change the image location
-           var newImageLoc = imageLoc.substring(0, 19) + color + "_tn.jpeg";
+           // change the image location usingn split function
+           var newImageLoc = imageLoc.split('_')[0] + '_' + color + "_tn.jpeg";
+           // var newImageLoc = imageLoc.substring(0, 19) + color + "_tn.jpeg";
 
            // reset the image location
            $(this).children().attr("src", newImageLoc);
@@ -244,23 +244,21 @@ var jQuery = $;
 // create a dropdown for size and quantity select element in details page 
 (function() {
     
-    // create variables for selected ID elements, appended object and target ID
-    var size = $("#size"),
-        sizeTargId = size.attr("id") + "Target",
-        sizeObject = $(".size"),
-        quantity = $("#quantity"),
-        quantityTargId = quantity.attr("id") + "Target",
-        quantityObject = $(".quantity");
-    
-    // create dropdown for each element
-    createDropDown(size, sizeObject, sizeTargId);
-    createDropDown(quantity, quantityObject, quantityTargId);
+// create variables for selected ID elements, appended object and target ID
+var size = $("#size"),
+    sizeTargId = size.attr("id") + "Target",
+    sizeObject = $(".size"),
+    quantity = $("#quantity"),
+    quantityTargId = quantity.attr("id") + "Target",
+    quantityObject = $(".quantity");
 
-    // bind click for each element
-    bindDropdown(size);
-    bindDropdown(quantity);
+// create dropdown for each element
+createDropDown(size, sizeObject, sizeTargId);
+createDropDown(quantity, quantityObject, quantityTargId);
 
-})();
+// bind click for each element
+bindDropdown(size);
+bindDropdown(quantity);
 
 // reusable function for creating the dropdown 
 function createDropDown(selectedElem, appendObject, targetId){
@@ -312,6 +310,17 @@ function bindDropdown(elementId) {
         elementId.val($(this).find("span.value").html());
     });
 }
+
+// prevent the default behavior of link in size and quantity dropdown
+$('#sizeTarget a').on('click', function(e) {
+	e.preventDefault();
+});
+
+$('#quantityTarget a').on('click', function(e) {
+	e.preventDefault();
+});
+
+})();
 
 // initiate flexisel carousel jQuery plugin
 $(window).load(function() {

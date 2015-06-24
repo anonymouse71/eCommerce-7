@@ -7,7 +7,7 @@
     		<div class="products_sum">
 	    		<p>
 	    			{{ HTML::link('/', 'Home') }} <span> / </span>
-	    			{{ HTML::link('store/category' . $category->id, $category->name, array('class' => 'category-name')) }}<span> / </span>
+	    			{{ HTML::link('store/category/' . $category->id, $category->name, array('class' => 'category-name')) }}<span> / </span>
 	    			{{ HTML::link('store/category' . $category->id, "All") }}
 	    		</p>
 	    		<h3>
