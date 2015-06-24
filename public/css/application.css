@@ -2810,6 +2810,13 @@ Main components
   margin: 0;
   padding: 3px 5px;
 }
+
+/* new style for update button in laravel project */
+.dj-shopping-cart .shopping-cart-table .cart-item-details .item-info .details-column ul .update-btn {
+  background-color: white;
+  padding-top: 6px;
+  padding-bottom: 8px;
+}
 /* line 125, ../../../components/sass/modules/cart/_cart-table.scss */
 .dj-shopping-cart .shopping-cart-table .cart-item-details .item-info .details-column ul .reg-button:hover {
   background: #B83936;
@@ -2924,6 +2931,12 @@ Main components
     width: 66px;
     padding: 2px 5px;
   }
+  
+  /* new style for update button in laravel project */
+  .dj-shopping-cart .shopping-cart-table .cart-item-details .item-info .details-column ul .update-btn {
+    padding-top: 6px;
+    padding-bottom: 7px;
+  }
   /* line 247, ../../../components/sass/modules/cart/_cart-table.scss */
   .dj-shopping-cart .shopping-cart-table .cart-item-details .item-info .unitprice-column {
     width: 10%;
@@ -2998,6 +3011,13 @@ Main components
     width: 70px;
     padding: 4px 6px;
   }
+  
+  /* new style for update button in laravel project */
+  .dj-shopping-cart .shopping-cart-table .cart-item-details .item-info .details-column ul .update-btn {
+    padding-top: 7px;
+    padding-bottom: 9px;
+  }
+
   /* line 326, ../../../components/sass/modules/cart/_cart-table.scss */
   .dj-shopping-cart .shopping-cart-table .cart-item-details .item-info .unitprice-column {
     width: 8%;
@@ -3113,6 +3133,12 @@ Main components
     font-size: 12.5px;
     width: 76px;
     padding: 3px 4px;
+  }
+   
+  /* new style for update button in laravel project */
+  .dj-shopping-cart .shopping-cart-table .cart-item-details .item-info .details-column ul .update-btn {
+    padding-top: 7px;
+    padding-bottom: 8px;
   }
   /* line 445, ../../../components/sass/modules/cart/_cart-table.scss */
   .dj-shopping-cart .shopping-cart-table .cart-item-details .item-info .unitprice-column, .dj-shopping-cart .shopping-cart-table .cart-item-details .item-info .qty-column,

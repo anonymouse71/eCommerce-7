@@ -210,6 +210,10 @@ var jQuery = $;
 		var color = $(this).children().attr('class');
 		$('#color_selected span').text(color);
 
+		// store the selected color value in the hidden input field
+		// so as to be retrieved and sent to server
+		$('#selected-color').val(color);
+
 		// select the image list and loop through each of its child element
 		var list = $('#image_tn li');
 		list.each(function(index) {

@@ -52,8 +52,12 @@
 					   <h3 style="color:black;">{{ $product->price }}</h3>
 					@endif
 				</section>
+				{{ Form::open(array('url' => 'cart/add', 'method' => 'post')) }}
 				<section id="color_options">
-					<div id="color_selected">&nbsp;color: <span>{{ $color->color }}</span></div>
+					<div id="color_selected">
+						&nbsp;color: <span>{{ $color->color }}</span>
+						{{ Form::hidden('color', $color->color, array('id' => 'selected-color')) }}
+					</div>
                     <ul class="color_list">
                     	@foreach($product->colors as $color)
                     	    <li><a><div class="{{ $color->color }}"></div></a></li>
@@ -61,7 +65,8 @@
 				</section>
 				<section id="dropdown">
 					<div class="size">
-			            <select id="size">
+						{{-- {{ Form::select('size', $product->sizes, 'Select size', array('id' => 'size')) }} --}}
+			            <select id="size" name="size">
 			            	<option selected="selected" value="ss">Select size</option>
 			            	@foreach($product->sizes as $size)
 			            	    <option value="{{ $size->size }}">{{ $size->size }}</option>
@@ -69,7 +74,7 @@
 			            </select>
 	                </div>
 	                <div class="quantity">
-			            <select id="quantity">
+			            <select id="quantity" name="quantity">
 			            	<option selected="selected" value="1">1</option>
 		                    <option value="2">2</option>
 		                    <option value="3">3</option>
@@ -84,7 +89,11 @@
 						{{ HTML::link('images/details/sizechart.png', 'size chart') }}
 					</div>
 					<div id="overLay"></div>
-					<button id="buy_button">add to bag&nbsp;&nbsp;<span class="fa fa-shopping-cart"></span></button>
+					{{ Form::hidden('id', $product->id) }}
+					<button id="buy_button">
+						add to bag&nbsp;&nbsp;<span class="fa fa-shopping-cart"></span>
+					</button>
+					{{ Form::close() }}
 				</section>
 				<section class="product_specifc">
 					<div id="product_desc">

@@ -53,7 +53,9 @@
 			</li>
 			<li>
 				<a class="fa fa-shopping-cart" href="cart.html">
-					<span class="item-number">8</span>
+					@if(Cart::count() > 0)
+					   <span class="item-number">{{ Cart::count() }}</span>
+					@endif
 				</a>
 			</li>
 		</ul>

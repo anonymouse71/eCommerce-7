@@ -15,3 +15,4 @@ Route::get('/', array('uses' => 'StoreController@getIndex'));
 
 Route::controller('users', 'UsersController');
 Route::controller('store', 'StoreController');
+Route::controller('cart', 'CartController');
