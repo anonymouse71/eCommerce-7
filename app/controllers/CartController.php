@@ -140,6 +140,7 @@ class CartController extends BaseController {
 	 */
 	public function getThanks()
 	{
+		Cart::destroy();
 		return View::make('cart.thanks');
 	}
 
